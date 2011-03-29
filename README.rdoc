@@ -77,6 +77,17 @@
 
    flash[:notice] = ['Сообщение1', 'Сообщение2']
 
+== TODO
+
+Удалять gritter_notice только после того как они закроются или их закроют
+
+Контроллер gritter_notices с одной акцией delivered. Ставить ее запуск на onclose. Сделать настраиваемым текущее поведение:
+
+   1. notices помечаются доставленными когда показываются во view (контроллер не используется)
+   2. notices помечаются удаленными когда закрываются (сами или принудительно) onclose
+   3. обычные notices по методу 1, sticky notices по методу 2.
+
+
 == Credits
 * Robin Brouwer https://github.com/RobinBrouwer/gritter
 * Jordan Boesch http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/
