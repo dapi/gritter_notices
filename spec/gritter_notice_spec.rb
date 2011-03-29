@@ -2,11 +2,24 @@
 require 'spec_helper'
 
 describe GritterNotice do
-  it { should belong_to(:user) }
-  it { should validate_presence_of(:user) }
+  it { should belong_to(:owner) }
+  it { should validate_presence_of(:owner) }
   it { should validate_presence_of(:message) }
-  context "помечается как доставленная" do
+  it { should be_fresh }
+  it { should_not be_delivered }
+
+  describe '#mark_as_delivered' do
     subject { Factory :notice }
-    it { should_not be_delivered }
+    it 'destroys after delivering' do
+      subject.should_receive(:destroy_after_deliver?) { true }
+      subject.mark_as_delivered
+      subject.should be_destroyed
+    end
+
+    it 'marks as delivered after delivering' do
+      subject.should_receive(:destroy_after_deliver?) { false }
+      subject.mark_as_delivered
+      subject.should be_delivered
+    end
   end
 end

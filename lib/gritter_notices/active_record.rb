@@ -20,11 +20,13 @@ module GritterNotices::ActiveRecord
     def notice *args
       options = args.extract_options!
       message = args.first || options[:message]
-      options = {:scope=>:gritter_notices, :level=>:notice}.merge options
+      options = {:scope=>:gritter_notices}.merge options
       if message.is_a? Symbol
         options[:gritter_message_key] = message
+        options[:level] = message unless options[:level]
         message = I18n::translate(message, options)
       end
+      options[:level]=:notice unless options[:level]
       gritter_notices.create! :message=>message, :options=>options
     end
 

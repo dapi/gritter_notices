@@ -3,6 +3,6 @@ Factory.define :user do |u|
 end
 
 Factory.define :notice, :class=>'GritterNotice' do |f|
-  f.association :user
+  f.association :owner, :factory=>:user
   f.message "MyText"
 end

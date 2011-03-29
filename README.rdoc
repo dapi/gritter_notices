@@ -6,6 +6,8 @@
 
 Визуально выглядит так: http://boedesign.com/demos/gritter/
 
+Модуль родился и активно используется в проекте http://planposter.com/
+
 == Установка
 
 Включаем модуль в Gemfile, незабываем затем сделать bundle install:
@@ -28,7 +30,7 @@
        = include_gritter
     %body
        = gflash // session сообщения добавляемые через gritter-овский gflash :success=>траляля
-       = gritter_flash_messages // Все остальные сообщения добавляемые через flash[:success] или notice
+       = gritter_flash_messages // Все остальные сообщения добавляемые через вызовы типа flash[:success] или user.notice_*
 
 == Использование
 
@@ -79,13 +81,15 @@
 
 == TODO
 
-Удалять gritter_notice только после того как они закроются или их закроют
+1. Удалять gritter_notice только после того как они закроются или их закроют
 
 Контроллер gritter_notices с одной акцией delivered. Ставить ее запуск на onclose. Сделать настраиваемым текущее поведение:
 
    1. notices помечаются доставленными когда показываются во view (контроллер не используется)
    2. notices помечаются удаленными когда закрываются (сами или принудительно) onclose
    3. обычные notices по методу 1, sticky notices по методу 2.
+
+2. Показывать push-сообщения
 
 
 == Credits

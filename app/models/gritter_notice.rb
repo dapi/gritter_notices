@@ -19,6 +19,7 @@ class GritterNotice < ActiveRecord::Base
 
   serialize :options, Hash
 
+  before_validation :set_options
   validates_presence_of :owner, :message
 
   def fresh?
@@ -39,5 +40,11 @@ class GritterNotice < ActiveRecord::Base
     else
       update_attribute :delivered_at, Time.now
     end
+  end
+
+  private
+
+  def set_options
+    self.options={} unless self.options
   end
 end
