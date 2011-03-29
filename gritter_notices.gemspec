@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gritter_notices}
-  s.version = "0.2.0"
+  s.version = "0.3.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Danil Pismenny"]
@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "lib/generators/templates/migration.rb",
     "lib/gritter_notices.rb",
     "lib/gritter_notices/active_record.rb",
+    "lib/gritter_notices/engine.rb",
     "lib/gritter_notices/rspec_matcher.rb",
     "lib/gritter_notices/view_helpers.rb",
     "spec/gritter_notice_spec.rb",
@@ -41,8 +42,8 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/dapi/gritter_notices}
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.5.0}
-  s.summary = %q{Show flashes and saved user's notices with Gritter (growl-like jQuery plugin)}
+  s.rubygems_version = %q{1.6.1}
+  s.summary = %q{Show growl-like  flashes and saved user's notices with Gritter}
   s.test_files = [
     "spec/gritter_notice_spec.rb",
     "spec/owner_spec.rb",
@@ -68,6 +69,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_development_dependency(%q<rcov>, [">= 0"])
+      s.add_runtime_dependency(%q<gritter>, ["~> 0.6"])
     else
       s.add_dependency(%q<gritter>, [">= 0"])
       s.add_dependency(%q<activerecord>, ["~> 3.0"])
@@ -80,6 +82,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
       s.add_dependency(%q<rcov>, [">= 0"])
+      s.add_dependency(%q<gritter>, ["~> 0.6"])
     end
   else
     s.add_dependency(%q<gritter>, [">= 0"])
@@ -93,6 +96,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.5.2"])
     s.add_dependency(%q<rcov>, [">= 0"])
+    s.add_dependency(%q<gritter>, ["~> 0.6"])
   end
 end
 
