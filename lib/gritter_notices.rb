@@ -11,3 +11,6 @@ require 'gritter_notices/view_helpers'
 ActionView::Base.send( :include, GritterNotices::ViewHelpers )
 
 require 'gritter_notices/rspec_matcher'
+
+require 'gritter_notices/engine'
+

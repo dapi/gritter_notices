@@ -15,13 +15,13 @@ Jeweler::Tasks.new do |gem|
   gem.name = "gritter_notices"
   gem.homepage = "http://github.com/dapi/gritter_notices"
   gem.license = "MIT"
-  gem.summary = "Show flashes and saved user's notices with Gritter (growl-like jQuery plugin)"
+  gem.summary = "Show growl-like  flashes and saved user's notices with Gritter"
   gem.description = %Q{Provide `notice` method to user model to save notices and to shows them later in views with Gritter (growl-like jQuery plugin). Fully support of Rails flash messages also. Helpful to send flash messages from background jobs.}
   gem.email = "danil@orionet.ru"
   gem.authors = ["Danil Pismenny"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  #  gem.add_runtime_dependency 'jabber4r', '> 0.1'
+  gem.add_runtime_dependency 'gritter', '> 0.6'
   #  gem.add_development_dependency 'rspec', '> 1.2.3'
 end
 Jeweler::RubygemsDotOrgTasks.new
