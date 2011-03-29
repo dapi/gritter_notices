@@ -12,5 +12,6 @@ ActionView::Base.send( :include, GritterNotices::ViewHelpers )
 
 require 'gritter_notices/rspec_matcher'
 
-require 'gritter_notices/engine'
+require 'gritter_notices/engine' if defined?(Rails)
+
 
