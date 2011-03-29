@@ -1,0 +1,98 @@
+= gritter_notices
+
+Использует модуль gritter для отображения flash сообщеий, а также вводит механизм сохраняемых пользовательских сообщений (notice).
+
+Удобно применять для отправки пользователю flash-сообщений из фоновых задач.
+
+Визуально выглядит так: http://boedesign.com/demos/gritter/
+
+== Установка
+
+Включаем модуль в Gemfile, незабываем затем сделать bundle install:
+
+    gem 'gritter' # неабываем его далее установить согласно документации
+    gem 'gritter_notices'
+
+Создаем таблицу `gritter_notices`
+
+    rails g gritter_notices
+    rake db:migrate
+
+Подключаем в notices в модель user:
+
+    has_gritter_notices
+
+Где-то в layout делаем так (haml-пример):
+
+    %head
+       = include_gritter
+    %body
+       = gflash // session сообщения добавляемые через gritter-овский gflash :success=>траляля
+       = gritter_flash_messages // Все остальные сообщения добавляемые через flash[:success] или notice
+
+== Использование
+
+В расширяемую модель добавляются метод `notice`. Агрументы:
+
+* Текстовое сообщение (String) или ключ к строке локали (Symbol)
+* Хеш опций прозрачно сохраняемых в модели и используемые при подстановке в `I18n::translate`.
+** В хеше опций пожно указать :scope для трансляции локали (по умолчанию `:gritter_notices`) и
+** `:level` из поддерживаемых gritter-ом - [:success, :warning, :notice, :error, :progress], по умолчанию :notice
+** :title
+** :sticky
+** другие опции понимаемые gritter-ом
+
+Примеры использования:
+
+    user.notice 'Просто текстовое сообщение'
+    user.notice 'Текстовое сообщение', :level=>:notice
+
+если в локали указать
+
+    ru:
+      gritter_notices:
+        import_contacts: Импортиорваны контакты (%{count})
+
+то можно будет использовать ключ, вместо текстового сообщения:
+
+    user.notice :import_contacts, :count=>123
+
+Для краткости можно :level указывать через подчеркивание после названия метода `notice`:
+
+    notice_success
+    notice_error
+    notice_warning
+    notice_progress
+    notice_notice    # синоним просто `notice`
+
+Далее во вьюхе вызываем:
+
+   = gritter_flash_messages
+
+который отображает и flash сообщения и накопвшиеся `notices`.
+
+== Дополнительно
+
+Поддерживается  `universal_flash_messages` и `flash-message-conductor`, тоесть сохранение во flash массивов сообщений, типа:
+
+   flash[:notice] = ['Сообщение1', 'Сообщение2']
+
+== Credits
+* Robin Brouwer https://github.com/RobinBrouwer/gritter
+* Jordan Boesch http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/
+
+== Contributing to gritter_notices
+
+* Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
+* Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
+* Fork the project
+* Start a feature/bugfix branch
+* Commit and push until you are happy with your contribution
+* Make sure to add tests for it. This is important so I don't break it in a future version unintentionally.
+* Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
+
+== Copyright
+
+Copyright (c) 2011 Danil Pismenny. See LICENSE.txt for
+further details.
+
