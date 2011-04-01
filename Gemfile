@@ -10,7 +10,9 @@ gem 'actionpack', "~> 3.0"
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development, :test do
+  gem 'ruby-debug'
   gem 'sqlite3'
+  gem 'watchr'
   gem 'factory_girl'
   gem 'shoulda'
   gem "rspec", "~> 2.5.0"

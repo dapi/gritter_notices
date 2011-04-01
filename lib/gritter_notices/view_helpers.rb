@@ -34,7 +34,7 @@ module GritterNotices::ViewHelpers
       gritter_key = GRITTER_CONVERT_KEYS[options[:level]] || GRITTER_CONVERT_KEYS[:other] || options[:level]
       options[:title] = titles[gritter_key] || options[:level].to_s  unless options[:title]
       options[:image] = gritter_key unless options[:image]
-      gritters << add_gritter(notice.message, options)
+      gritters << add_gritter(notice.text, options)
       notice.mark_as_delivered
     end
   end
@@ -57,7 +57,7 @@ module GritterNotices::ViewHelpers
   def move_gritter_notices_to_flashes
     return unless current_user
     current_user.gritter_notices.fresh.each do |notice|
-      append_flash_message notice.level, notice.message
+      append_flash_message notice.level, notice.text
       notice.mark_as_delivered
     end
   end

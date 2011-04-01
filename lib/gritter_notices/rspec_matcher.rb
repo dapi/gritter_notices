@@ -1,24 +1,24 @@
 module GritterNotices
   module RSpecMatcher
-    def have_gritter_notice(message=nil)
-      HaveGritterNotice.new(message)
+    def have_gritter_notice(text=nil)
+      HaveGritterNotice.new(text)
     end
 
     class HaveGritterNotice
-      def initialize(message)
-        @message = message
+      def initialize(text)
+        @text = text
       end
 
       def description
-        "send gritter notice '#{@message}' to '#{@model}"
+        "send gritter notice '#{@text}' to '#{@model}"
       end
 
-      def failure_message_for_should
-        "#{@model.class} should have gritter_notice with message '#{@message}'"
+      def failure_text_for_should
+        "#{@model.class} should have gritter_notice with text '#{@text}'"
       end
 
-      def failure_message_for_should_not
-        "#{@model.class} should not have an gritter_notice with message '#{@message}'"
+      def failure_text_for_should_not
+        "#{@model.class} should not have an gritter_notice with text '#{@text}'"
       end
 
       # def from(value)
@@ -33,7 +33,7 @@ module GritterNotices
 
       def matches?(model)
         @model = model
-        not model.gritter_notices.select { |g| !@message or g.message == @message or g.options[:gritter_message_key] == @message }.empty?
+        not model.gritter_notices.select { |g| !@text or g.text == @text or g.options[:gritter_key] == @text }.empty?
       end
     end
   end

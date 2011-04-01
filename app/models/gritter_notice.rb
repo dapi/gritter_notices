@@ -20,7 +20,7 @@ class GritterNotice < ActiveRecord::Base
   serialize :options, Hash
 
   before_validation :set_options
-  validates_presence_of :owner, :message
+  validates_presence_of :owner, :text
 
   def fresh?
     delivered_at.blank?

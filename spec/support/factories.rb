@@ -4,5 +4,5 @@ end
 
 Factory.define :notice, :class=>'GritterNotice' do |f|
   f.association :owner, :factory=>:user
-  f.message "MyText"
+  f.text "MyText"
 end

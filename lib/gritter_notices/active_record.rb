@@ -1,6 +1,6 @@
 module GritterNotices::ActiveRecord
 
-  ValidMethods = Hash[*GritterNotices::KEYS.map { |key| ["notice_#{key}".to_sym, key] }.flatten]
+  ValidMethods = Hash[*GritterNotices::KEYS.map { |key| ["gritter_notice_#{key}", key] }.flatten]
 
   # :level => [:success, :warning, :notice, :error, :progress]
   def has_gritter_notices
@@ -13,35 +13,37 @@ module GritterNotices::ActiveRecord
     #
     # Examples:
     #
-    # notice :message=>'asdsad', :image=>:notice
+    # notice :text=>'asdsad', :image=>:notice
     # notice 'message', :level=>:success
     #
-
-    def notice *args
+    def gritter_notice *args
       options = args.extract_options!
-      message = args.first || options[:message]
+      text = args.first || options[:text]
       options = {:scope=>:gritter_notices}.merge options
-      if message.is_a? Symbol
-        options[:gritter_message_key] = message
-        options[:level] = message unless options[:level]
-        message = I18n::translate(message, options)
+      if text.is_a? Symbol
+        options[:gritter_key] = text
+        options[:level] = text unless options[:level]
+        text = options[:text] || I18n::translate(text, options)
       end
       options[:level]=:notice unless options[:level]
-      gritter_notices.create! :message=>message, :options=>options
+      gritter_notices.create! :text=>text, :options=>options
     end
 
+    alias_method :notice, :gritter_notice
+
+    #
     # notice_success
     # notice_error
     # notice_warning
     # notice_progress
     # notice_notice    - default. An alias for `notice`
-
+    #
     def method_missing(method_name, *args, &block)
-      if level = ValidMethods[method_name]
+      if level = ValidMethods[method_name.to_s] or level = ValidMethods["gritter_#{method_name}"]
         options = args.extract_options!
         options[:level] = level
         args << options
-        notice *args
+        gritter_notice *args
       else
         super(method_name, *args, &block)
       end

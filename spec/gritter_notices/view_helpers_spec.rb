@@ -26,23 +26,28 @@ describe GritterNotices::ViewHelpers, :type => :helper  do
       flash[:error]='Error'
       flash[:success]=['Success1','Success2']
       flash[:info]=nil
-      current_user.notice :progress
-      current_user.notice_warning 'Warning'
+      current_user.gritter_notice :progress, :title=>'Supertitle', :text=>'Supertext'
+      current_user.notice_warning 'Warning Warning'
 
       compiled_gritters = [
         "$.gritter.add({image:'/images/gritter/error.png',title:'translation missing: en.gflash.titles.error',text:'Error'});",
+        "$.gritter.add({image:'/images/gritter/progress.png',title:'Supertitle',text:'Supertext'});",
         "$.gritter.add({image:'/images/gritter/success.png',title:'translation missing: en.gflash.titles.success',text:'Success1'});",
         "$.gritter.add({image:'/images/gritter/success.png',title:'translation missing: en.gflash.titles.success',text:'Success2'});",
-        "$.gritter.add({image:'/images/gritter/progress.png',title:'translation missing: en.gflash.titles.progress',text:'translation missing: en.gritter_notices.progress'});",
-        "$.gritter.add({image:'/images/gritter/warning.png',title:'translation missing: en.gflash.titles.warning',text:'Warning'});"]
-      helper.should_receive(:js).with(compiled_gritters) { mock :html_safe=>true }
+        "$.gritter.add({image:'/images/gritter/warning.png',title:'translation missing: en.gflash.titles.warning',text:'Warning Warning'});"
+    ].sort
+      #helper.should_receive(:js).with(compiled_gritters) { mock :html_safe=>true }
+      helper.should_receive(:js) do |args|
+        args.sort.should == compiled_gritters
+        mock :html_safe=>true
+      end
       helper.gritter_flash_messages
     end
   end
 
   describe '#move_gritter_notices_to_flashes' do
     specify do
-      notice = mock :level=>:level, :message=>:message
+      notice = mock :level=>:level, :text=>'text'
       notice.should_receive(:mark_as_delivered).twice
       current_user.stub_chain('gritter_notices.fresh') {[notice,notice]}
       helper.should_receive(:append_flash_message).twice
