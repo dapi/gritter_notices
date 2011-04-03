@@ -6,7 +6,9 @@
 
 Визуально выглядит так: http://boedesign.com/demos/gritter/
 
-Модуль родился и активно используется в проекте http://planposter.com/
+Модуль родился и активно используется в проекте http://planposter.com
+
+http://dl.dropbox.com/u/155427/gritter_notices.png
 
 == Установка
 
@@ -80,6 +82,8 @@
 Поддерживается  `universal_flash_messages` и `flash-message-conductor`, тоесть сохранение во flash массивов сообщений, типа:
 
    flash[:notice] = ['Сообщение1', 'Сообщение2']
+
+Также некоторая информация есть здесь: http://habrahabr.ru/blogs/ror/116754/
 
 == TODO
 
