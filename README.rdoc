@@ -6,6 +6,8 @@
 
 Визуально выглядит так: http://boedesign.com/demos/gritter/
 
+Рабочий пример использования этого модуля: http://gritter-notices-example.heroku.com/
+
 Модуль родился и активно используется в проекте http://planposter.com
 
 http://dl.dropbox.com/u/155427/gritter_notices.png
@@ -119,7 +121,8 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 == Примеры:
 
-   * https://github.com/dapi/gritter_notices_example
+   * http://gritter-notices-example.heroku.com/
+   код: http://github.com/dapi/gritter_notices_example
    * http://planposter.com/
 
 Друзья, присылайте ссылка на ваши проекты использующие gritter_notices.
