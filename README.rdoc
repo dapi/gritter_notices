@@ -6,7 +6,9 @@
 
 Визуально выглядит так: http://boedesign.com/demos/gritter/
 
-Модуль родился и активно используется в проекте http://planposter.com/
+Модуль родился и активно используется в проекте http://planposter.com
+
+http://dl.dropbox.com/u/155427/gritter_notices.png
 
 == Установка
 
@@ -101,6 +103,7 @@
    flash[:notice] = ['Сообщение1', 'Сообщение2']
 
 О плагине jQuery Gritter - http://ruseller.com/adds.php?rub=11&id=2106
+Также некоторая информация есть здесь: http://habrahabr.ru/blogs/ror/116754/
 
 == TODO
 
