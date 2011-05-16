@@ -21,6 +21,10 @@ module GritterNotices
         "#{@model.class} should not have an gritter_notice with text '#{@text}'"
       end
 
+      def failure_message
+        'gritter_notice failure'
+      end
+
       # def from(value)
       #   @from = value
       #   self

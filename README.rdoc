@@ -12,25 +12,44 @@
 
 Включаем модуль в Gemfile, незабываем затем сделать bundle install:
 
-    gem 'gritter' # неабываем его далее установить согласно документации
     gem 'gritter_notices'
 
-Создаем таблицу `gritter_notices`
+Копируем jQuery-плагин Gritter (https://github.com/jboesch/Gritter) в проект:
+
+    rake gritter:sources
+
+Создаем таблицу `gritter_notices` где будут храниться сообщения:
 
     rails g gritter_notices
     rake db:migrate
 
-Подключаем в notices в модель user:
+Подключаем notices в модель user:
 
-    has_gritter_notices
+    class User < ActiveRecord::Base
+      has_gritter_notices
+      ...
 
-Где-то в layout делаем так (haml-пример):
+Где-то в layout делаем так:
+
+* haml-пример:
 
     %head
        = include_gritter
     %body
        = gflash // session сообщения добавляемые через gritter-овский gflash :success=>траляля
        = gritter_flash_messages // Все остальные сообщения добавляемые через вызовы типа flash[:success] или user.notice_*
+
+* erb-пример:
+
+    <head>
+      <%= include_gritter %>
+      ...
+    <body>
+       <%= gflash  %>
+       <%= gritter_flash_messages %>
+
+
+Вместо `include_fritter` можно делать сразу `include_gritter_and_jquery` подробнее тут: https://github.com/RobinBrouwer/gritter
 
 == Использование
 
@@ -81,6 +100,8 @@
 
    flash[:notice] = ['Сообщение1', 'Сообщение2']
 
+О плагине jQuery Gritter - http://ruseller.com/adds.php?rub=11&id=2106
+
 == TODO
 
 1. Удалять gritter_notice только после того как они закроются или их закроют
@@ -92,6 +113,13 @@
    3. обычные notices по методу 1, sticky notices по методу 2.
 
 2. Показывать push-сообщения
+
+== Примеры:
+
+   * https://github.com/dapi/gritter_notices_example
+   * http://planposter.com/
+
+Друзья, присылайте ссылка на ваши проекты использующие gritter_notices.
 
 == Нечто отдаленно подобное:
 
