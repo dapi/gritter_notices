@@ -119,6 +119,12 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 2. Показывать push-сообщения
 
+Присмотреться к:
+
+* https://github.com/wavded/humane-js
+* https://github.com/rubiety/message_block
+* http://plapier.github.com/sexy-css3-flashes/
+
 == Примеры:
 
    * http://gritter-notices-example.heroku.com/
