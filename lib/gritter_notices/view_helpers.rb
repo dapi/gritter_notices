@@ -19,7 +19,7 @@ module GritterNotices::ViewHelpers
     options = args.extract_options!
     titles = gflash_titles(options)
     gritters = []
-    debugger
+
     # Собираем flash-сообщения
     add_flashes_to_gritters( gritters, flash, titles )
     defined?(current_user) and current_user.respond_to?(:gritter_notices) and
