@@ -19,11 +19,11 @@ module GritterNotices::ViewHelpers
     options = args.extract_options!
     titles = gflash_titles(options)
     gritters = []
-
+    debugger
     # Собираем flash-сообщения
     add_flashes_to_gritters( gritters, flash, titles )
-    add_notices_to_gitters( gritters,
-      current_user.gritter_notices.fresh, titles) if defined?(current_user) and current_user.respond_to?(:gritter_notices)
+    defined?(current_user) and current_user.respond_to?(:gritter_notices) and
+      add_notices_to_gitters( gritters, current_user.gritter_notices.fresh, titles)
 
     js(gritters).html_safe unless gritters.empty?
   end
@@ -40,7 +40,7 @@ module GritterNotices::ViewHelpers
   end
 
   def add_flashes_to_gritters(gritters, list, titles)
-    list.each_pair do |key, message_array|
+    list.to_hash.each_pair do |key, message_array|
       next unless message_array
       message_array = [message_array] unless message_array.is_a? Array
       message_array.flatten.each { |message|
