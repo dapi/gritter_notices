@@ -118,12 +118,15 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
    3. обычные notices по методу 1, sticky notices по методу 2.
 
 2. Показывать push-сообщения
+3. Написать драйверы для других способов отображения (список ниже)
 
-Присмотреться к:
+== Другие способы отображения
 
 * https://github.com/wavded/humane-js
 * https://github.com/rubiety/message_block
 * http://plapier.github.com/sexy-css3-flashes/
+* https://github.com/jyoungblood/smoke.js
+* КТО ЗНАЕТ ЕЩЕ ПРИМЕРЫ ??? Напишите пожалуйста мне.
 
 == Примеры:
 
