@@ -144,6 +144,12 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
  https://github.com/QuBiT/universal_flash_messages
 
 
+== Пишут от gritter_notices
+
+* http://dapi.ru/flash-delayedjob
+* http://pavlovnew.livejournal.com/20139.html
+* http://habrahabr.ru/blogs/ror/116754/
+
 == Credits
 * Robin Brouwer https://github.com/RobinBrouwer/gritter
 * Jordan Boesch http://boedesign.com/blog/2009/07/11/growl-for-jquery-gritter/
