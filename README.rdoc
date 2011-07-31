@@ -20,7 +20,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 Копируем jQuery-плагин Gritter (https://github.com/jboesch/Gritter) в проект:
 
-    rake gritter:install
+    rake gritter:install  # Это таск gem-а gritter (https://github.com/RobinBrouwer/gritter) он подключается автоматом
 
 ## Если хотим посылать персональные сообщения пользователям (помимо отображения flash)
 
@@ -121,6 +121,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 2. Показывать push-сообщения
 3. Написать драйверы для других способов отображения (список ниже)
+4. Уйти от gritter, сделать поддержку rails 3.1 assets
 
 == Другие способы отображения
 
