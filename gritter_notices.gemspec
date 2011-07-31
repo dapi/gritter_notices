@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{gritter_notices}
-  s.version = "0.3.3"
+  s.version = "0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Danil Pismenny"]
-  s.date = %q{2011-07-18}
+  s.date = %q{2011-07-31}
   s.description = %q{Provide `notice` method to user model to save notices and to shows them later in views with Gritter (growl-like jQuery plugin). Fully support of Rails flash messages also. Helpful to send flash messages from background jobs.}
   s.email = %q{danil@orionet.ru}
   s.extra_rdoc_files = [
