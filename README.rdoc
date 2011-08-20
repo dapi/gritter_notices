@@ -55,7 +55,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
        <%= gritter_flash_messages %>
 
 
-Вместо `include_fritter` можно делать сразу `include_gritter_and_jquery` подробнее тут: https://github.com/RobinBrouwer/gritter
+Вместо `include_gritter` можно делать сразу `include_gritter_and_jquery` подробнее тут: https://github.com/RobinBrouwer/gritter
 
 == Использование
 
