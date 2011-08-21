@@ -136,7 +136,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
    код: http://github.com/dapi/gritter_notices_example
    * http://planposter.com/
 
-Друзья, присылайте ссылка на ваши проекты использующие gritter_notices.
+Друзья, присылайте ссылки на ваши проекты использующие gritter_notices.
 
 == Нечто отдаленно подобное:
 
