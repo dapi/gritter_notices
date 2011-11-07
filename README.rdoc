@@ -1,5 +1,7 @@
 = gritter_notices
 
+{<img src="http://travis-ci.org/dapi/gritter_notices.png" />}[http://travis-ci.org/dapi/gritter_notices]
+
 Использует модуль gritter для отображения flash сообщеий, а также вводит механизм сохраняемых пользовательских сообщений (notice).
 
 Удобно применять для отправки пользователю flash-сообщений из фоновых задач.

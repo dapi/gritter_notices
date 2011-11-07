@@ -7,6 +7,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 ENV["RAILS_ENV"] ||= 'test'
 
+require 'rails/all'
 require 'active_record'
 require 'action_view'
 require 'action_controller'

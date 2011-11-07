@@ -15,8 +15,8 @@ group :development, :test do
   gem 'watchr'
   gem 'factory_girl'
   gem 'shoulda'
-  gem "rspec", "~> 2.5.0"
-  gem 'rspec-rails'
+  gem "rspec", "~> 2.7.0"
+  gem 'rspec-rails', '2.7.0'
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.5.2"
   gem "rcov", ">= 0"
