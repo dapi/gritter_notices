@@ -140,13 +140,13 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 Друзья, присылайте ссылки на ваши проекты использующие gritter_notices.
 
-== Нечто отдаленно подобное:
+== Нечто отдаленно подобное (альтернативы):
 
  Вместо flash_conductor-а
  https://github.com/mattpolito/flash-message-conductor
  https://rubygems.org/gems/glennr-flash-message-conductor
  https://github.com/QuBiT/universal_flash_messages
-
+ https://github.com/snitko/frontend_notifier
 
 == Пишут от gritter_notices
 
