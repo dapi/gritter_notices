@@ -130,6 +130,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 * https://github.com/rubiety/message_block
 * http://plapier.github.com/sexy-css3-flashes/
 * https://github.com/jyoungblood/smoke.js
+* https://github.com/needim/noty
 * КТО ЗНАЕТ ЕЩЕ ПРИМЕРЫ ??? Напишите пожалуйста мне.
 
 == Примеры:
