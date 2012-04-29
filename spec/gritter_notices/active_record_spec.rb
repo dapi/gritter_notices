@@ -3,7 +3,6 @@ require 'spec_helper'
 
 describe User do
   specify { User.should respond_to(:has_gritter_notices) }
-  it { should have_many(:gritter_notices) }
   it { should respond_to(:gritter_notice) }
 
   describe '#notice' do

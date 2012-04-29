@@ -3,21 +3,22 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gem 'rails', "~> 3.1"
+gem 'sprockets'
 gem 'gritter'
-gem 'activerecord', "~> 3.0"
-gem 'actionpack', "~> 3.0"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development, :test do
-  gem 'ruby-debug'
+  # gem 'ruby-debug'
   gem 'sqlite3'
+  gem 'combustion', '~> 0.3.2'
   gem 'watchr'
   gem 'factory_girl'
   gem 'shoulda'
-  gem "rspec", "~> 2.7.0"
-  gem 'rspec-rails', '2.7.0'
+  gem "rspec", "~> 2.9.0"
+  gem 'rspec-rails', '2.9.0'
   gem "bundler", "~> 1.0.0"
   gem "jeweler", "~> 1.5.2"
-  gem "rcov", ">= 0"
+  # gem "rcov", ">= 0"
 end

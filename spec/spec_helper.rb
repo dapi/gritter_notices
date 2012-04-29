@@ -2,15 +2,21 @@
 require 'rubygems'
 require 'bundler'
 
+Bundler.require :default, :development
+
+
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..'))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 ENV["RAILS_ENV"] ||= 'test'
 
-require 'rails/all'
-require 'active_record'
-require 'action_view'
-require 'action_controller'
+Combustion.initialize!
+
+#require 'rails/all'
+#require 'active_record'
+#require 'action_view'
+#require 'action_controller'
 
 require 'rspec'
 require 'rspec/rails'

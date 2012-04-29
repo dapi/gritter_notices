@@ -21,8 +21,9 @@ Jeweler::Tasks.new do |gem|
   gem.authors = ["Danil Pismenny"]
   # Include your dependencies below. Runtime dependencies are required when using your gem,
   # and development dependencies are only needed for development (ie running rake tasks, tests, etc)
-  gem.add_runtime_dependency 'gritter', '~> 0.6'
-  #  gem.add_development_dependency 'rspec', '> 1.2.3'
+  gem.add_runtime_dependency 'gritter'
+  gem.add_development_dependency 'rspec', '> 2.9'
+  gem.add_development_dependency 'combustion', '~> 0.3.2'
 end
 Jeweler::RubygemsDotOrgTasks.new
 

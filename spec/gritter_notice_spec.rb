@@ -2,7 +2,6 @@
 require 'spec_helper'
 
 describe GritterNotice do
-  it { should belong_to(:owner) }
   it { should validate_presence_of(:owner) }
   it { should validate_presence_of(:text) }
   it { should be_fresh }

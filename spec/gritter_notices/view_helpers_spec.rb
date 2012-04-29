@@ -29,12 +29,13 @@ describe GritterNotices::ViewHelpers, :type => :helper  do
       current_user.gritter_notice :progress, :title=>'Supertitle', :text=>'Supertext'
       current_user.notice_warning 'Warning Warning'
 
-      compiled_gritters = [
-        "$.gritter.add({image:'/images/gritter/error.png',title:'translation missing: en.gflash.titles.error',text:'Error'});",
-        "$.gritter.add({image:'/images/gritter/progress.png',title:'Supertitle',text:'Supertext'});",
-        "$.gritter.add({image:'/images/gritter/success.png',title:'translation missing: en.gflash.titles.success',text:'Success1'});",
-        "$.gritter.add({image:'/images/gritter/success.png',title:'translation missing: en.gflash.titles.success',text:'Success2'});",
-        "$.gritter.add({image:'/images/gritter/warning.png',title:'translation missing: en.gflash.titles.warning',text:'Warning Warning'});"
+      compiled_gritters = 
+        [
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/error.png',title:'translation missing: en.gflash.titles.error',text:'Error'});});",
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/progress.png',title:'Supertitle',text:'Supertext'});});",
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/success.png',title:'translation missing: en.gflash.titles.success',text:'Success1'});});",
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/success.png',title:'translation missing: en.gflash.titles.success',text:'Success2'});});",
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/warning.png',title:'translation missing: en.gflash.titles.warning',text:'Warning Warning'});});"
     ].sort
       #helper.should_receive(:js).with(compiled_gritters) { mock :html_safe=>true }
       helper.should_receive(:js) do |args|
