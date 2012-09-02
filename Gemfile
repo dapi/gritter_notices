@@ -18,7 +18,7 @@ group :development, :test do
   gem 'shoulda'
   gem "rspec", "~> 2.9.0"
   gem 'rspec-rails', '2.9.0'
-  gem "bundler", "~> 1.1.0"
+  gem "bundler"
   gem "jeweler"
   # gem "rcov", ">= 0"
 end
