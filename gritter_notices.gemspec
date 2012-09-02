@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Danil Pismenny"]
-  s.date = "2012-04-29"
+  s.date = "2012-09-02"
   s.description = "Provide `notice` method to user model to save notices and to shows them later in views with Gritter (growl-like jQuery plugin). Fully support of Rails flash messages also. Helpful to send flash messages from background jobs."
   s.email = "danil@orionet.ru"
   s.extra_rdoc_files = [
@@ -68,7 +68,7 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 2.9.0"])
       s.add_development_dependency(%q<rspec-rails>, ["= 2.9.0"])
-      s.add_development_dependency(%q<bundler>, ["~> 1.1.0"])
+      s.add_development_dependency(%q<bundler>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
       s.add_runtime_dependency(%q<gritter>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["> 2.9"])
@@ -84,7 +84,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 2.9.0"])
       s.add_dependency(%q<rspec-rails>, ["= 2.9.0"])
-      s.add_dependency(%q<bundler>, ["~> 1.1.0"])
+      s.add_dependency(%q<bundler>, [">= 0"])
       s.add_dependency(%q<jeweler>, [">= 0"])
       s.add_dependency(%q<gritter>, [">= 0"])
       s.add_dependency(%q<rspec>, ["> 2.9"])
@@ -101,7 +101,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 2.9.0"])
     s.add_dependency(%q<rspec-rails>, ["= 2.9.0"])
-    s.add_dependency(%q<bundler>, ["~> 1.1.0"])
+    s.add_dependency(%q<bundler>, [">= 0"])
     s.add_dependency(%q<jeweler>, [">= 0"])
     s.add_dependency(%q<gritter>, [">= 0"])
     s.add_dependency(%q<rspec>, ["> 2.9"])
