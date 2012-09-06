@@ -3,7 +3,7 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
-gem 'rails', "~> 3.1"
+gem 'rails', ">= 3.0"
 gem 'sprockets'
 gem 'gritter'
 
