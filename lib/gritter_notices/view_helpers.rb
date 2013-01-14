@@ -17,15 +17,21 @@ module GritterNotices::ViewHelpers
 
   def gritter_flash_messages *args
     options = args.extract_options!
+    only = options.delete(:only)
     titles = gflash_titles(options)
     gritters = []
 
     # Собираем flash-сообщения
-    add_flashes_to_gritters( gritters, flash, titles )
+    list = only ? slice_flash(only) : flash
+    add_flashes_to_gritters( gritters, list, titles )
     defined?(current_user) and current_user.respond_to?(:gritter_notices) and
       add_notices_to_gitters( gritters, current_user.gritter_notices.fresh, titles)
 
     js(gritters).html_safe unless gritters.empty?
+  end
+
+  def slice_flash(keys)
+    Array.wrap(keys).each_with_object({}) { |k, hash| hash[k] = flash[k] if flash[k].present? }
   end
 
   def add_notices_to_gitters(gritters, list, titles)
