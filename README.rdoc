@@ -133,7 +133,8 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 * https://github.com/needim/noty
 * http://code.google.com/p/jquery-purr/
 * https://github.com/CodeSeven/toastr
-* КТО ЗНАЕТ ЕЩЕ ПРИМЕРЫ ??? Напишите пожалуйста мне.
+* http://nijikokun.github.com/bootstrap-notify/
+* Еще?
 
 == Примеры:
 
