@@ -2,7 +2,7 @@
 
 {<img src="http://travis-ci.org/dapi/gritter_notices.png" />}[http://travis-ci.org/dapi/gritter_notices]
 
-Использует модуль gritter для отображения flash сообщеий, а также вводит механизм сохраняемых пользовательских сообщений (notice).
+Использует модуль gritter для отображения flash сообщений, а также вводит механизм сохраняемых пользовательских сообщений (notice).
 
 Удобно применять для отправки пользователю flash-сообщений из фоновых задач.
 
@@ -16,22 +16,22 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 == Установка
 
-Включаем модуль в Gemfile, незабываем затем сделать bundle install:
+Включаем модуль в Gemfile, не забываем затем сделать bundle install:
 
     gem 'gritter_notices'
 
 Копируем jQuery-плагин Gritter (https://github.com/jboesch/Gritter) в проект:
 
-    rake gritter:install
+    bundle exec rake gritter:install
 
 ## Если хотим посылать персональные сообщения пользователям (помимо отображения flash)
 
 Создаем таблицу `gritter_notices` где будут храниться сообщения:
 
-    rails g gritter_notices
-    rake db:migrate
+    bundle exec rails g gritter_notices
+    bundle exec rake db:migrate
 
-Подключаем notices в модель user:
+Подключаем notices в модель User:
 
     class User < ActiveRecord::Base
       has_gritter_notices
@@ -44,7 +44,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
     %head
        = include_gritter
     %body
-       = gflash # session сообщения добавляемые через gritter-овский gflash :success=>траляля
+       = gflash # session сообщения, добавляемые через gritter-овский gflash :success=>траляля
        = gritter_flash_messages # Все остальные сообщения добавляемые через вызовы типа flash[:success] или user.notice_*
 
 * erb-пример:
@@ -57,7 +57,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
        <%= gritter_flash_messages %>
 
 
-Вместо `include_gritter` можно делать сразу `include_gritter_and_jquery` подробнее тут: https://github.com/RobinBrouwer/gritter
+Вместо `include_gritter` можно делать сразу `include_gritter_and_jquery`, подробнее тут: https://github.com/RobinBrouwer/gritter
 
 == Использование
 
@@ -69,7 +69,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 ** `:level` из поддерживаемых gritter-ом - [:success, :warning, :notice, :error, :progress], по умолчанию :notice
 ** :title
 ** :sticky
-** другие опции понимаемые gritter-ом
+** другие опции, понимаемые gritter-ом
 
 Примеры использования:
 
@@ -96,15 +96,15 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 Также есть алиас gritter_notice со всеми вышеперечисленными типами сообщений.
 
-Далее во вьюхе вызываем:
+Далее во view вызываем:
 
    = gritter_flash_messages
 
-который отображает и flash сообщения и накопвшиеся `notices`.
+который отображает и flash сообщения и накопившиеся `notices`.
 
 == Дополнительно
 
-Поддерживается  `universal_flash_messages` и `flash-message-conductor`, тоесть сохранение во flash массивов сообщений, типа:
+Поддерживается  `universal_flash_messages` и `flash-message-conductor`, то есть сохранение во flash массивов сообщений, типа:
 
    flash[:notice] = ['Сообщение1', 'Сообщение2']
 
@@ -113,12 +113,12 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 == TODO
 
-1. Удалять gritter_notice только после того как они закроются или их закроют
+1. Удалять gritter_notice только после того, как они закроются или их закроют
 
 Контроллер gritter_notices с одной акцией delivered. Ставить ее запуск на onclose. Сделать настраиваемым текущее поведение:
 
-   1. notices помечаются доставленными когда показываются во view (контроллер не используется)
-   2. notices помечаются удаленными когда закрываются (сами или принудительно) onclose
+   1. notices помечаются доставленными, когда показываются во view (контроллер не используется)
+   2. notices помечаются удаленными, когда закрываются (сами или принудительно) onclose
    3. обычные notices по методу 1, sticky notices по методу 2.
 
 2. Показывать push-сообщения
@@ -152,7 +152,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
  https://github.com/QuBiT/universal_flash_messages
  https://github.com/snitko/frontend_notifier
 
-== Пишут от gritter_notices
+== Пишут о gritter_notices
 
 * http://dapi.ru/flash-delayedjob
 * http://pavlovnew.livejournal.com/20139.html
