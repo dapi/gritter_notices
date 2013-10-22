@@ -134,6 +134,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 * http://code.google.com/p/jquery-purr/
 * https://github.com/CodeSeven/toastr
 * http://nijikokun.github.com/bootstrap-notify/
+* https://github.com/leonid-shevtsov/unobtrusive_flash
 * Еще?
 
 == Примеры:
