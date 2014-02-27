@@ -1,8 +1,10 @@
-Factory.define :user do |u|
-  u.name 'Bob'
-end
+FactoryGirl.define do
+  factory :user do |u|
+    u.name 'Bob'
+  end
 
-Factory.define :notice, :class=>'GritterNotice' do |f|
-  f.association :owner, :factory=>:user
-  f.text "MyText"
+  factory :notice, :class=>'GritterNotice' do |f|
+    f.association :owner, :factory=>:user
+    f.text "MyText"
+  end
 end

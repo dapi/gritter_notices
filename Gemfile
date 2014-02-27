@@ -5,14 +5,16 @@ source "http://rubygems.org"
 
 gem 'rails', ">= 3.0"
 gem 'sprockets'
-gem 'gritter'
+gem 'gritter', '~> 1.1.0'
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development, :test do
   # gem 'ruby-debug'
+  gem 'activerecord'
+  gem 'actionpack'
   gem 'sqlite3'
-  gem 'combustion', '~> 0.3.2'
+  gem 'combustion', '~> 0.5.1'
   gem 'watchr'
   gem 'factory_girl'
   gem 'shoulda'

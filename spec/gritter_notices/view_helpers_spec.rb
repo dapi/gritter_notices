@@ -2,12 +2,12 @@
 require 'spec_helper'
 
 describe GritterNotices::ViewHelpers, :type => :helper  do
+  let(:user) { create :user }
   before do
-    @user = Factory :user
-    helper.stub!(:current_user) { @user }
+    helper.stub!(:current_user) { user }
   end
 
-  let(:current_user) { @user }
+  let(:current_user) { user }
   # let(:flash) { {:success=>'Success',:error=>['Error1','Error2']} }
 
   describe '#gritter_flash_messages' do
@@ -32,7 +32,7 @@ describe GritterNotices::ViewHelpers, :type => :helper  do
       compiled_gritters = 
         [
           "jQuery(function(){jQuery.gritter.add({image:'/assets/error.png',title:'translation missing: en.gflash.titles.error',text:'Error'});});",
-          "jQuery(function(){jQuery.gritter.add({image:'/assets/progress.png',title:'Supertitle',text:'Supertext'});});",
+          "jQuery(function(){jQuery.gritter.add({image:'/assets/progress.gif',title:'Supertitle',text:'Supertext'});});",
           "jQuery(function(){jQuery.gritter.add({image:'/assets/success.png',title:'translation missing: en.gflash.titles.success',text:'Success1'});});",
           "jQuery(function(){jQuery.gritter.add({image:'/assets/success.png',title:'translation missing: en.gflash.titles.success',text:'Success2'});});",
           "jQuery(function(){jQuery.gritter.add({image:'/assets/warning.png',title:'translation missing: en.gflash.titles.warning',text:'Warning Warning'});});"

@@ -14,8 +14,8 @@
 class GritterNotice < ActiveRecord::Base
   belongs_to :owner, :polymorphic=>true
 
-  scope :delivered, where("delivered_at is not nul").order('delivered_at')
-  scope :fresh, where("delivered_at is null").order('created_at').limit(5)
+  scope :delivered, -> { where("delivered_at is not nul").order('delivered_at') }
+  scope :fresh, -> { where("delivered_at is null").order('created_at').limit(5) }
 
   serialize :options, Hash
 

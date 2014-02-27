@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 require 'rubygems'
 require 'bundler'
+require 'combustion'
 
 Bundler.require :default, :development
 
@@ -11,7 +12,7 @@ $LOAD_PATH.unshift(File.dirname(__FILE__))
 
 ENV["RAILS_ENV"] ||= 'test'
 
-Combustion.initialize!
+Combustion.initialize! :all
 
 #require 'rails/all'
 #require 'active_record'
@@ -51,4 +52,5 @@ require 'spec/support/factories'
 
 RSpec.configure do |config|
   config.include GritterNotices::RSpecMatcher
+  config.include FactoryGirl::Syntax::Methods
 end

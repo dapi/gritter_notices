@@ -2,4 +2,4 @@ Gemfile.lock
 .emacs*
 *~
 pkg/
-/.rvmrc
+spec/internal/tmp/

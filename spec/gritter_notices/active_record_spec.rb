@@ -6,7 +6,7 @@ describe User do
   it { should respond_to(:gritter_notice) }
 
   describe '#notice' do
-    subject { Factory :user }
+    subject { create :user }
 
     it 'gets message with string' do
       subject.notice 'some text'
