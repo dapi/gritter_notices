@@ -56,6 +56,7 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
        <%= gflash  %>
        <%= gritter_flash_messages %>
 
+В `gritter_flash_messages` можно передать "белый список" ключей flash в опции `:only`, в этом случае будут показываться сообщения только из этого списка.
 
 Вместо `include_gritter` можно делать сразу `include_gritter_and_jquery`, подробнее тут: https://github.com/RobinBrouwer/gritter
 
@@ -177,4 +178,3 @@ http://dl.dropbox.com/u/155427/gritter_notices.png
 
 Copyright (c) 2011 Danil Pismenny. See LICENSE.txt for
 further details.
-
